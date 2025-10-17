@@ -1,0 +1,62 @@
+CONCAT
+Concat serveix per com diu el seu nom concatenar diferents columnes, es a dir consultes en una de sola
+//exemple d'us
+SELECT CONCAT(FIRST_NAME," ",LAST_NAME) FROM EMPLOYEES;
+
+CONCAT_WS
+Concat_ws te un us similar al CONCAT normal pero amb la particularitat de que aquest li pots delimitar el tipus d'espaiat (a diferencia del altre on tens que posar " "
+SELECT CONCAT(' ',"Hola",FIRST_NAME,LAST_NAME)
+
+LPAD
+serveix per repetir un numero de caracters de dreta a esquerra tantes vegades com s'indiqui en cas de que hi hagi uns caracters entre mitg els "contara" es a dir si hi ha la paraula mates i tu li indicas 6 repeticions de "ABC" nomes escriura la A, en cas de 7 B en cas de 8 C i aixi
+SELECT LPAD("SQL Tutorial",13, "ABC");
+
+RPAD
+el matiex pero de esquerra a dreta
+SELECT RPAD("SQL Tutorial",13, "ABC");
+
+LEFT
+left extreu una serie de caracters de la esquerra del text (tu li pots delimitar quants caracters extreure)
+SELECT LEFT("SQL Tutorial", 3) AS ExtractString;
+
+RIGHT
+el mateix que LEFT pero de dreta a esquerra
+SELECT RIGHT("SQL Tutorial is cool", 4) AS ExtractString;
+
+SUBSTRING
+substring es com un right i left pero mes especific et permet extreure els caracters que tu vulguis indicant-li tu els parametres, es llegeis de esquerra a dreta i va del 1 al "infinit"
+tu per especificar un camp li posas des d'on a de començar a llegir + els caracters a llegir
+SELECT SUBSTRING("SQL Tutorial", 1, 5) AS ExtractString; = SQL T
+SELECT SUBSTRING("SQL Tutorial", 5, 5) AS ExtractString; = Tutor
+
+
+INTR
+intr et busca el primer caracter que sigui igual al especificat, va d'esquerra a dreta 
+SELECT INSTR("Guillem", "l") AS MatchPosition; = 4
+
+LOWER
+et posa tots els caracters que li donis a minuscula
+
+UPPER
+
+
+LENGTH
+
+
+LOCATE
+
+
+TRIM
+
+
+LTRIM
+
+
+RTRIM
+
+
+REPEAT
+
+
+REPLACE
+
