@@ -36,12 +36,15 @@ SELECT INSTR("Guillem", "l") AS MatchPosition; = 4
 
 LOWER
 et posa tots els caracters que li donis a minuscula
+SELECT LOWER(HOLA); = hola
 
 UPPER
-
+et dona tots els caracters introduits a majuscula
+SELECT UPPER(hola); = HOLA
 
 LENGTH
-
+basant-se amb els caracters que li introdueixis et donara un numero que sera equivalent al numero de caracters
+SELECT LENGTH(hola); = 4
 
 LOCATE
 
