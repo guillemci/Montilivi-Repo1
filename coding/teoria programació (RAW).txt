@@ -1,0 +1,13 @@
+estructurada
+-sequencies
+-condicions/alternatives
+-iteratives
+
+Modularitat
+codi dividit en diferents fragments
+metodes
+{
+funcions retornen
+accions no retornen
+}
+

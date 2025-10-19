@@ -1,0 +1,132 @@
+INTERVAL
+serveix per afegir un interval de temps a un DATETIME o DATE o TIME
+
+funciona aixi
+
+INTERVAL time_quantity time_unit
+
+units:
+microsecond
+second
+minute
+hour
+day
+week
+month
+quarter
+year
+
+també es poden fer unitats combinades:
+
+HOUR_MINUTE
+
+exemple d'us
+
+'2008-12-31 23:59:59' + INTERVAL 1 SECOND = 2009-01-01 00:00:00                       
+
+ADD_MONTHS
+serveix per afegir mesos a una data
+ADD_MONTHS(date, months)
+
+ADDDATE
+serveix per afegir un interval de temps a una data
+exemple d'us:
+ADDDATE('2008-01-02', INTERVAL 31 DAY) = 2008-02-02 
+
+ADDTIME()
+serveix per afegir un interval de temps
+SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');
+2008-01-02 01:01:01.000001   
+
+CURRDATE()
+et dona la data actual
+
+CURTIME()
+et donan l'hora actual
+
+DATE()
+extreu unicament la data d'un camp de data i temps
+SELECT DATE('2013-07-18 12:21:32');
+2013-07-18
+
+DATE_ADD
+es una funcio que et permet sumar intervals de temps i data a una hora i data incloent mesos i anys
+SELECT '2008-12-31 23:59:59' + INTERVAL 2 MONTH;
+2009-2-28 23:59:59
+
+DATE_FORMAT
+servix per donar format a una data hi hora
+exemple: 
+a% nom curt d'un dia
+%d dia amb 2 digits
+%M nom full del mesos
+%m mes amb 2 digits
+%W et dona el nom complert del dia de la setmana
+%w dia de la setmana
+
+exemple d'us
+SELECT DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y');
+Sunday October 2009
+
+SELECT DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s');
+22:23:00       
+
+tambe pots especificar amb l'idioma que s'escriura
+exemple:
+
+SELECT DATE_FORMAT('2006-01-01', '%W', 'ca_ES');
+Diumenge
+
+DATE_SUB
+serveix per restar temps utilitzant intervals
+exemple:
+SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);
+1997-12-02   
+
+DATEDIFF
+retorna la diferencia de dates i temps entre dos dates
+
+DAYOFMONTH
+retorna el dia d'una data
+exemple:
+SELECT DAYOFMONTH('2007-02-03');
+3
+
+DAYOFWEEK
+et retorna el dia de la setmana
+SELECT DAYOFWEEK('2007-02-03');
+7
+
+DAYOFYEAR
+retorna el dia del any en un rang de 1 al 366 (per els anys amb mes de 365 dias)
+SELECT DAYOFYEAR('2018-02-16');
+47
+
+EXTRACT()
+serviex per extreure dades de la data que tu vulguis
+exemple:
+SELECT EXTRACT(YEAR FROM '2009-07-02');
+2009
+SELECT EXTRACT(YEAR_MONTH FROM '2009-07-02 01:02:03');
+200907
+
+FROM_DAYS
+donat un numero de dies et torna una data corresponent a aquests
+
+TO_DAYS
+donada una data t'ho torna a dies
+
+FROM_UNIXTIME
+converteix segons EPOCH en una data llegible
+
+UNIX_TIMESTAMP
+converteix una data a segons EPOOCH
+
+PERIOD_DIFF()
+et permet comparar dates entre dos dias utilitzant YYMM o YYYYMM
+
+NOW()
+servex per YYYY-MM-DD HH:MM:SS
+
+
+

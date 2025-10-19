@@ -30,7 +30,7 @@ SELECT SUBSTRING("SQL Tutorial", 1, 5) AS ExtractString; = SQL T
 SELECT SUBSTRING("SQL Tutorial", 5, 5) AS ExtractString; = Tutor
 
 
-INTR
+INSTR
 intr et busca el primer caracter que sigui igual al especificat, va d'esquerra a dreta 
 SELECT INSTR("Guillem", "l") AS MatchPosition; = 4
 
@@ -47,19 +47,29 @@ basant-se amb els caracters que li introdueixis et donara un numero que sera equ
 SELECT LENGTH(hola); = 4
 
 LOCATE
-
+locate et diu la posicio del primer caracter que hagis especificat trovar llegint de esquerra a dreta
+SELECT LOCATE("3", "Gui3lem"); = 4
 
 TRIM
-
+trim serveix per treure tots els caracters que corresponguin a un espaiat abans de trovar un caracter o fa des de la dreta i l'esquerra
+SELECT TRIM("  HOLA  "); = (HOLA)
 
 LTRIM
-
+funciona igual que el trim pero nomes treu els caracters de la esquerra
 
 RTRIM
-
+funciona igual que el trim pero nomes treu els caracters de la dreta
 
 REPEAT
-
+serveix per repetir un caracter els cops que necesitis donada una quantitat
+SELECT REPEAT("HOLA ", 3); = HOLA HOLA HOLA
 
 REPLACE
+serveix per remplaçar els caracters que vulguis per els caracters que tu especifiquis
+SELECT REPLACE("HTML TUTORIAL", "HTML", "SQL"); = SQL TUTORIAL
+
+FORMAT
+serveix per arrodonir numeros a la cantitat desitjada
+SELECT FORMAT(2500.3634, 2); = 2500.36
+SELECT FORMAT (2500.72, 0); = 2501
 
