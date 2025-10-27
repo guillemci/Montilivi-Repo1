@@ -123,10 +123,11 @@ UNIX_TIMESTAMP
 converteix una data a segons EPOOCH
 
 PERIOD_DIFF()
-et permet comparar dates entre dos dias utilitzant YYMM o YYYYMM
+et permet comparar temps entre dos dates utilitzant YYMM o YYYYMM
 
 NOW()
 servex per YYYY-MM-DD HH:MM:SS
 
-
+SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');
+3
 

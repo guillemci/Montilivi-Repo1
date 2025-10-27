@@ -1,0 +1,186 @@
+#contenidor {
+    background-color: rgb(255, 253, 240);
+    width: 850px;
+    height: 100%;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+body,
+html {
+    height: 100%;
+    background-color: rgb(177, 177, 177);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(72, 87, 77);
+}
+
+header {
+    background-color: white;
+}
+
+div #headerlogollibre {
+    position: relative;
+    height: 90px;
+}
+
+header #llibre {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%, -50%);
+}
+
+header #logo {
+    width: 300px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header #benvinguda {
+    text-align: center;
+    padding: 9px;
+    background-color: rgb(255, 250, 205);
+    border: 3px solid black;
+    border-left: none;
+    border-right: none;
+    font-size: 17px;
+}
+
+header #benvinguda h1 {
+    margin: 2px;
+}
+
+nav {
+    position: relative;
+    border-bottom: 3px solid black;
+    background-color: rgb(255, 248, 220);
+}
+
+nav ul {
+    margin: 0;
+    padding: 15px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 12px;
+    background-color: rgb(255, 250, 205);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: darkslategray;
+    transition: all 0.3s;
+    font-size: 17px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+nav li:hover {
+    background-color: rgb(255, 228, 196);
+    cursor: pointer;
+}
+
+#cercador {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+}
+
+#cercador input {
+    border: 2px solid black;
+    margin: 0;
+    padding: 12px;
+    font-size: 13px;
+}
+
+#cercador button {
+    border: 2px solid black;
+    background-color: rgb(255, 250, 205);
+    color: darkslategray;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+#cercador button:hover {
+    background-color: rgb(255, 228, 196);
+    cursor: pointer;
+}
+
+main {
+    text-align: center;
+    padding: 12px;
+}
+
+main .book {
+    display: inline-block;
+    width: 200px;
+    margin: 7px;
+    padding: 5px;
+    background-color: white;
+    transition: all 0.3s;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+main .book img {
+    width: 150px;
+    height: 200px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    border: 3px solid black;
+}
+
+main .book button {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(255, 228, 196);
+    color: darkslategray;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+main .book button:hover {
+    background-color: rgb(179, 160, 136);
+    color: white;
+}
+
+main .book img {
+    transition: 250ms;
+    opacity: 0.9;
+}
+
+main .book:hover img {
+    opacity: 1;
+}
+
+#footertext {
+    text-align: center;
+    padding: 6px;
+    border-top: 3px solid black;
+    border-left: none;
+    border-right: none;
+    font-size: 14px;
+}
+
+#nom_producte {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+#preu {
+    color: darkred;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
