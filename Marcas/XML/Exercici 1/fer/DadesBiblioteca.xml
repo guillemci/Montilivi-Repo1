@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<biblioteca>
+    <nom>Biblioteca Miquel Martí i Pol</nom>
+    <adreça>Pl. de Rafael Masó, 2, 17150 Sant Gregori, Girona</adreça>
+    <anynaixa>1989</anynaixa>
+    <seccionsbiblio>
+        <llibre idllibre="1" tipusllibre="novela">
+            <ISBN>978-8417707571</ISBN>
+            <titol>Involución</titol>
+            <editorial>
+                <nom>Editorial Hidra</nom>
+                <adreça>
+                    <carrer>Carrer de Pau Claris</carrer>
+                    <numero>170</numero>
+                    <poblacio>Barcelona</poblacio>
+                </adreça>
+            </editorial>
+            <anysedicio>2020</anysedicio>
+            <autor>
+                <persona id="1" estatcivil="desconegut" sitauaciolaboral="escriptor">
+                    <nom>Max</nom>
+                    <cognom1>Brooks</cognom1>
+                    <cognom2></cognom2>
+                    <adreça></adreça>
+                    <dnaixa>
+                        <any>1972</any>
+                        <mes>5</mes>
+                        <dia>22</dia>
+                    </dnaixa>
+                    <urlfoto>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Max_Brooks_Rocket_Llama.jpg/1024px-Max_Brooks_Rocket_Llama.jpg</urlfoto>
+                    <dadesdecontacte>
+                        <telefon></telefon>
+                        <correu></correu>
+                    </dadesdecontacte>
+                </persona>
+            </autor>
+        </llibre>
+
+
+        <llibre idllibre="2" tipusllibre="ficcio">
+            <ISBN>978-1503280786</ISBN>
+            <titol>Moby Dick</titol>
+            <editorial>
+                <nom>Harper and Brothers</nom>
+                <adreça>
+                    <carrer>Franklin Square</carrer>
+                    <numero>1</numero>
+                    <poblacio>New York</poblacio>
+                </adreça>
+            </editorial>
+            <anysedicio>1851</anysedicio>
+            <autor>
+                <persona id="1" estatcivil="casat" sitauaciolaboral="escriptor">
+                    <nom>Herman</nom>
+                    <cognom1>Melville</cognom1>
+                    <cognom2></cognom2>
+                    <adreça>New York, USA</adreça>
+                    <dnaixa>
+                        <any>1819</any>
+                        <mes>8</mes>
+                        <dia>1</dia>
+                    </dnaixa>
+                    <urlfoto>
+                        https://upload.wikimedia.org/wikipedia/commons/e/e8/Herman_Melville_by_Joseph_O_Eaton.jpg</urlfoto>
+                    <dadesdecontacte>
+                        <telefon></telefon>
+                        <correu></correu>
+                    </dadesdecontacte>
+                </persona>
+            </autor>
+        </llibre>
+        <llibre idllibre="3" tipusllibre="novela">
+            <ISBN>978-84-253-3265-2</ISBN>
+            <titol>It</titol>
+            <editorial>
+                <nom>Editorial Molino</nom>
+                <adreça>
+                    <carrer>Gran Via</carrer>
+                    <numero>45</numero>
+                    <poblacio>Barcelona</poblacio>
+                </adreça>
+            </editorial>
+            <anysedicio>1986</anysedicio>
+            <autor>
+                <persona id="1" estatcivil="casat" sitauaciolaboral="actiu">
+                    <nom>Stephen</nom>
+                    <cognom1>King</cognom1>
+                    <cognom2></cognom2>
+                    <adreça>Bangor, Maine, EUA</adreça>
+                    <dnaixa>
+                        <any>1947</any>
+                        <mes>9</mes>
+                        <dia>21</dia>
+                    </dnaixa>
+                    <urlfoto>http://exemple.com/stephenking.jpg</urlfoto>
+                    <dadesdecontacte>
+                        <telefon></telefon>
+                        <correu></correu>
+                    </dadesdecontacte>
+                </persona>
+            </autor>
+        </llibre>
+        <llibre idllibre="4" tipusllibre="ficcio">
+            <ISBN>978-84-206-8000-5</ISBN>
+            <titol>El viatge al centre de la Terra</titol>
+            <editorial>
+                <nom>Editorial Planeta</nom>
+                <adreça>
+                    <carrer>Provença</carrer>
+                    <numero>234</numero>
+                    <poblacio>Barcelona</poblacio>
+                </adreça>
+            </editorial>
+            <anysedicio>1864</anysedicio>
+            <autor>
+                <persona id="1" estatcivil="casat" sitauaciolaboral="mort">
+                    <nom>Jules</nom>
+                    <cognom1>Verne</cognom1>
+                    <cognom2></cognom2>
+                    <adreça>Niça, França</adreça>
+                    <dnaixa>
+                        <any>1828</any>
+                        <mes>2</mes>
+                        <dia>8</dia>
+                    </dnaixa>
+                    <urlfoto>http://exemple.com/julesverne.jpg</urlfoto>
+                    <dadesdecontacte>
+                        <telefon></telefon>
+                        <correu></correu>
+                    </dadesdecontacte>
+                </persona>
+            </autor>
+        </llibre>
+    </seccionsbiblio>
+</biblioteca>

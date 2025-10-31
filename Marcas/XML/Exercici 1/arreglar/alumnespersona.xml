@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<alumnes>
+  <persona id="1">
+    <nom>Manel</nom>
+    <cognom>Garcia</cognom>
+  </persona>
+  <persona id="2">
+    <nom>Pere</nom>
+    <cognom>González</cognom>
+  </persona>
+  <persona id="3">
+    <nom>Pere</nom>
+    <cognom> Pérez </cognom>
+  </persona>
+  <persona id="4">
+    <nom>Marià</nom>
+    <cognom>Garcia</cognom>
+  </persona>
+</alumnes>
