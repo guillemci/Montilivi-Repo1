@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<persones>
+    <!--estatcivil pot ser
+    solter/casat/soltera/casada-->
+    <!--sitauaciolaboral
+    pot ser actiu/aturat-->
+    <persona id="1" estatcivil="solter" sitauaciolaboral="aturat">
+        <nom>Guillem</nom>
+        <cognom1>Comas</cognom1>
+        <cognom2>Iborra</cognom2>
+        <adreça>Carrer Bruguera</adreça>
+        <dnaixa>
+            <any>2007</any>
+            <mes>7</mes>
+            <dia>29</dia>
+        </dnaixa>
+        <urlfoto></urlfoto>
+        <dadesdecontacte>
+            <telefon>688874344</telefon>
+            <correu>guillemcib@gmail.com</correu>
+        </dadesdecontacte>
+    </persona>
+    <persona id="2" estatcivil="solter" sitauaciolaboral="actiu">
+        <nom>Ian</nom>
+        <cognom1>Bouso</cognom1>
+        <cognom2></cognom2>
+        <adreça>Carrer de les ballesteries</adreça>
+        <dnaixa>
+            <any>6</any>
+            <mes>7</mes>
+            <dia>1967</dia>
+        </dnaixa>
+        <urlfoto></urlfoto>
+        <dadesdecontacte>
+            <telefon>677435629</telefon>
+            <correu>ibouso@gmail.com</correu>
+        </dadesdecontacte>
+    </persona>
+    <persona id="3" estatcivil="casat" sitauaciolaboral="actiu">
+        <nom>Robert</nom>
+        <cognom1>Gutierrez</cognom1>
+        <cognom2>Finestres</cognom2>
+        <adreça>El carrer del portal de la Barca</adreça>
+        <dnaixa>
+            <any>1989</any>
+            <mes>11</mes>
+            <dia>7</dia>
+        </dnaixa>
+        <urlfoto></urlfoto>
+        <dadesdecontacte>
+            <telefon>788675640</telefon>
+            <correu>RobertG@gmail.com</correu>
+        </dadesdecontacte>
+    </persona>
+</persones>
