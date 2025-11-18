@@ -1,10 +1,10 @@
-﻿namespace extras2
+﻿namespace Ex01
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int numeroAEndevinat
+            Console.WriteLine("Hello, World!");
         }
     }
 }
