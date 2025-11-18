@@ -8,7 +8,10 @@
         /// </summary>
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             Console.WriteLine("aquest programa demanara 10 numeros per teclat els quals seran sumats");
+=======
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             int numeroSumat = 0;
             Console.WriteLine("introdueix els numeros de els quals en vulguis fer una suma s'en demanaran 10");
             for (int i = 0; i < 10; i++)
@@ -21,4 +24,8 @@
             Console.WriteLine($"el total de numeros sumats a sigut de {numeroSumat}");
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627

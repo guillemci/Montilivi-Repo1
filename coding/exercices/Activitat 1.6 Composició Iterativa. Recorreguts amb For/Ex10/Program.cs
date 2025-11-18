@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+<<<<<<< HEAD
         /// <summary>
         /// 10. Fes un programa que mostri tots els números múltiples de 4 entre el 0 i el 300.
         /// ● Després de mostrar 20 números, el programa ha de pausar-se fins que que l’usuari premi
@@ -21,6 +22,15 @@
                     Console.WriteLine("prem una tecla per continuar");
                     Console.ReadLine();
                 }
+=======
+        static void Main(string[] args)
+        {
+            for (int i = 0; i <= 300; i++)
+            {
+                if (i % 4 == 0) Console.WriteLine($"{i} es un multiple de 4");
+                else Console.WriteLine($"{i} no es un multiple de 4");
+                if (i == 20) Console.ReadLine();
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             }
         }
     }

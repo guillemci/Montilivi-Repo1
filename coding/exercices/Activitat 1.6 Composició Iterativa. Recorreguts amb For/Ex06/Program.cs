@@ -8,6 +8,7 @@
         /// </summary>
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             int numero;
             int numeroPositiu = 0;
             int numeroZero = 0;
@@ -22,6 +23,16 @@
                 numero = Convert.ToInt32(Console.ReadLine());
 
                 //condicionals
+=======
+            int numeroPositiu = 0;
+            int numeroZero = 0;
+            int numeroNegatiu = 0;
+            Console.WriteLine("introdueix els numeros de els quals en vulguis fer una suma s'en demanaran 10");
+            for (int i = 0; i < 10; i++)
+            {
+                int numero = Convert.ToInt32(Console.ReadLine());
+
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
                 if (numero > 0)
                     numeroPositiu++;
                 else if (numero < 0)

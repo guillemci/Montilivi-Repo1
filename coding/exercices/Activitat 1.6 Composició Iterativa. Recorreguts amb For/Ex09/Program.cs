@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+<<<<<<< HEAD
         /// <summary>
         /// Escriu un programa que demani un número per teclat. El programa ha de mostrar la taula de
         ///multiplicar de l‘1 al 10 del número entrat per teclat.
@@ -19,6 +20,14 @@
             for (int i = 0; i <= 10; i++)
             {
                 Console.WriteLine($"{i} x {valorUsuari}  = {i * valorUsuari}");
+=======
+        static void Main(string[] args)
+        {
+            int valorUsuari = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine(i * valorUsuari);
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             }
         }
     }

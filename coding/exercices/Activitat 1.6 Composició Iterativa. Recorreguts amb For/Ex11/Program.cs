@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+<<<<<<< HEAD
         /// <summary>
         /// 11. Considerem el fitxer BONUS3.TXT per al càlcul del BONUS. La primera línia del fitxer conté el
         /// nombre total de bitllets.Cada línia només informa de si el bitllet té un "BONUS" o no. Si la línia té un
@@ -26,6 +27,20 @@
             for (int i = 0; i < totalBitllets; i++)
             {
                 //condicionals
+=======
+        static void Main(string[] args)
+        {
+            StreamReader trova = new StreamReader("BONUS3.txt");
+
+            double valorGuanyBonus = 0;
+            int totalAmbBonus = 0;
+
+            int totalBitllets = Convert.ToInt32(trova.ReadLine());
+            string numerolineas = trova.ReadLine();
+
+            for (int i = 0; i < totalBitllets; i++)
+            {
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
                 if (numerolineas == "BONUS")
                 {
                     double valor = Convert.ToDouble(trova.ReadLine());
@@ -38,15 +53,23 @@
                     Console.WriteLine($"el bitllet numero {i + 1} no te bonus");
                 }
 
+<<<<<<< HEAD
                 //actualitzar linea
+=======
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
                 numerolineas = trova.ReadLine();
             }
             trova.Close();
 
+<<<<<<< HEAD
             //calcul
             double percent = (double)totalAmbBonus / totalBitllets * 100;
 
             //output
+=======
+            double percent = (double)totalAmbBonus / totalBitllets * 100;
+
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             Console.WriteLine($"el total de bitllets a sigut de {totalBitllets}");
             Console.WriteLine($"el total de bitllets guanyadors distributs a sigut de {totalAmbBonus}");
             Console.WriteLine($"el percentatge de bitllets guanyadors a sigut de {percent}");

@@ -10,19 +10,29 @@
         /// </summary>
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             //variables
+=======
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             int valor = 0;
             Console.WriteLine("introdueix el numero del qual en vulguis fer la suma dels seus anteriors");
             int a = Convert.ToInt32(Console.ReadLine());
 
+<<<<<<< HEAD
             //bucle
+=======
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             for (int i = 0; i <= a; i++)
             {
                  valor += i;
             }
 
+<<<<<<< HEAD
             //output
             Console.WriteLine($"el resultat es: {valor}");
+=======
+            Console.WriteLine($"el resultat es:{valor}");
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
         }
     }
 }

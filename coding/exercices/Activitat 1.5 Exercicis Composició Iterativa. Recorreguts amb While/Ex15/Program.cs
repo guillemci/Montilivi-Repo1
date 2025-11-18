@@ -14,7 +14,7 @@
         static void Main(string[] args)
         {
             //variables
-            StreamReader trova = new StreamReader("Girona lliga23_24_v2.txt");
+            StreamReader trova = new StreamReader("Girona lliga23_24.txt");
             int golRival = 0, golGirona = 0;
             int puntsTotals = 0;
             int partitsGuanyants = 0, partitsPerduts = 0, partitsEmpatats = 0;
@@ -65,7 +65,7 @@
 
             //output
             Console.WriteLine($"el total de partits que han guanyat el Girona es de: {partitsGuanyants}");
-            Console.WriteLine($"el total de partits que hna perdut el Girona es de: {partitsPerduts}");
+            Console.WriteLine($"el total de partits que han perdut el Girona es de: {partitsPerduts}");
             Console.WriteLine($"el total de partits que han enpatat el Girona es de es de: {partitsEmpatats}");
             Console.WriteLine($"el total de punts fets del Girona es de {puntsTotals}");
         }

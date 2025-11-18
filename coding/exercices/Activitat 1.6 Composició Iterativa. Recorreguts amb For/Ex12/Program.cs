@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Security.Cryptography;
 
@@ -25,11 +26,22 @@ namespace Ex12
             StreamReader trova = new StreamReader("coordenades2.txt");
 
             //variables
+=======
+﻿namespace Ex12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader trova = new StreamReader("coordenades2.txt");
+
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             int Radi;
             double x;
             double y;
             int totalinas = Convert.ToInt32(trova.ReadLine());
             string linea = trova.ReadLine();
+<<<<<<< HEAD
             Console.WriteLine("especifica el radi");
             Radi = Convert.ToInt32(Console.ReadLine());
             
@@ -39,10 +51,23 @@ namespace Ex12
                 //procesament de
                 x = Convert.ToDouble(linea);
                 Console.WriteLine($"la X proporcionada per el programa es {x}");
+=======
+            Radi = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < totalinas; i++)
+            {
+                x = Convert.ToDouble(linea);
+                Console.WriteLine($"la X proporcionada per el programa es {x}");
+                x = Math.Pow(x, 2);
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
                 linea = trova.ReadLine();
 
                 y = Convert.ToDouble(linea);
                 Console.WriteLine($"la Y proporcionada per el programa es {y}");
+<<<<<<< HEAD
+=======
+                y = Math.Pow(y, 2);
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
 
                 string cadenaTornada = Distancia(x, y, Radi);
                 Console.WriteLine(cadenaTornada);
@@ -52,6 +77,7 @@ namespace Ex12
             trova.Close();
         }
 
+<<<<<<< HEAD
         //funcio cridada per el bucle
         public static string Distancia(double x, double y, int Radi)
         {
@@ -63,6 +89,14 @@ namespace Ex12
             x = Math.Pow(x, 2);
             y = Math.Pow(y, 2);
             distancia = x + y;
+=======
+        public static string Distancia(double x, double y, int Radi)
+        {
+            string cadenaATornar;
+            double distancia;
+            distancia = x + y;
+
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             distancia = Math.Round(Math.Sqrt(distancia), 2);
 
             //condicional tractar elements procesats

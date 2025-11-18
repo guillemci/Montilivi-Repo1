@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿namespace Ex17B
 {
     internal class Program
@@ -23,6 +24,22 @@
             int numeroDintsTaula = 10;
 
             //bucle
+=======
+﻿namespace _17B
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int taulesAImprimir = Convert.ToInt32(Console.ReadLine());
+            MostrarTaula(taulesAImprimir);
+        }
+
+        public static void MostrarTaula(int numTaula)
+        {
+            int numeroDintsTaula = 10;
+
+>>>>>>> d77365382e3973784c49ce5bb88fa6f547df8627
             for (int j = 0; j <= numeroDintsTaula; j++)
             {
                 if (j == 0)
