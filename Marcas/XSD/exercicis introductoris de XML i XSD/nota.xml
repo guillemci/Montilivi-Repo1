@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="C:\Users\guillemci\bullshit del sistema\Desktop\tasca xsd\nota.xsd">
+    <to>Joan</to>
+    <from>Pere</from>
+    <heading>Capçalera</heading>
+    <body>Cos del missatge</body>
+    <date>2024-06-15</date>
+    <phone>655764543</phone>
+</note>

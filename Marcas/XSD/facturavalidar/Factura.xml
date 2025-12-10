@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="comprovadorfactura.xsd"
+    moneda="EUR" id="FACT-2023-001" versio="1.0">
+
+    <dadesFact>
+        <logo>https://www.empresa.com/logo.png</logo>
+        <numFactura>2023001</numFactura>
+        <data>2023-10-14</data>
+        <missatge>Gràcies per confiar en nosaltres. Descompte del 10% en la propera factura!</missatge>
+    </dadesFact>
+
+    <emissor>
+        <nom>Endesa Energía</nom>
+        <cognom1>SA</cognom1>
+        <identificador tipus="cif">12345678Z</identificador>
+        <web>www.endesa.com</web>
+        <email>factures@endesa.com</email>
+        <telefon>934567890</telefon>
+        <adreca>
+            <carrer>Avinguda Diagonal</carrer>
+            <numero>123</numero>
+            <pis>5</pis>
+            <porta>A</porta>
+            <cp>08028</cp>
+            <ciutat>Barcelona</ciutat>
+        </adreca>
+    </emissor>
+
+    <receptor>
+        <nom>Matthew</nom>
+        <cognom1>Bellamy</cognom1>
+        <cognom2>James</cognom2>
+        <identificador tipus="nif">46058475J</identificador>
+        <email>hysteria@muse.com</email>
+        <telefon>689215497</telefon>
+        <adreca>
+            <carrer>Carrer Drones</carrer>
+            <numero>5</numero>
+            <pis>1</pis>
+            <cp>17001</cp>
+            <ciutat>Girona</ciutat>
+        </adreca>
+    </receptor>
+
+    <consum unitat="kWh">
+        <periode id="1">
+            <quantitat>470.50</quantitat>
+            <mes>Agost</mes>
+            <any>2023</any>
+        </periode>
+        <periode id="2">
+            <quantitat>460.75</quantitat>
+            <mes>Setembre</mes>
+            <any>2023</any>
+        </periode>
+        <periode id="3">
+            <quantitat>510.25</quantitat>
+            <mes>Octubre</mes>
+            <any>2023</any>
+        </periode>
+        <periode id="4">
+            <quantitat>784.00</quantitat>
+            <mes>Novembre</mes>
+            <any>2023</any>
+        </periode>
+        <periode id="5">
+            <quantitat>530.80</quantitat>
+            <mes>Desembre</mes>
+            <any>2023</any>
+        </periode>
+    </consum>
+
+    <resum estat="pendent">
+        <subtotal>107.12</subtotal>
+        <iva>31.16</iva>
+        <total>138.28</total>
+    </resum>
+
+    <pagament>
+        <forma tipus="transferencia">
+            <transferencia>
+                <dataInici>2023-10-15</dataInici>
+                <iban>ES9121000418450200051332</iban>
+            </transferencia>
+        </forma>
+    </pagament>
+    <!--
+    <pagament>
+        <forma tipus="comptat">
+            <comptat>
+                <data>2023-10-14</data>
+            </comptat>
+        </forma>
+    </pagament>
+    
+    <pagament>
+        <forma tipus="targeta">
+            <targeta>
+                <numero>1234-5678-9012-3456</numero>
+                <nom>Matthew</nom>
+                <cognom>Bellamy</cognom>
+                <mesCad>06</mesCad>
+                <anyCad>2025</anyCad>
+                <cvv>123</cvv>
+            </targeta>
+        </forma>
+    </pagament>
+    -->
+
+    <peu>
+        <publicitat>
+            CANVIA LA TEVA FORMA DE VEURE L'ENERGIA. Coneix en detall el teu consum de llum,
+            compara'l amb vivendes similars i comença a estalviar en la teva factura. Visita la
+            nostra web per a més informació.
+        </publicitat>
+    </peu>
+
+</factura>

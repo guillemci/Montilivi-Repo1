@@ -1,0 +1,12 @@
+    <!-- la vui mencionar perque m'ha semblat una forma molt compacta pero nose si estructuralment
+    tant efectiva i menys escalable en certa manera
+    <consum unitat="kWh">
+        <periode id="1" mes="AGO" any="2018">470</periode>
+        <periode id="2" mes="OCT" any="2018">460</periode>
+        <periode id="3" mes="DIC" any="2018">510</periode>
+        <periode id="4" mes="FEB" any="2019">784</periode>
+        <periode id="5" mes="ABR" any="2019">530</periode>
+        <periode id="6" mes="AGO" any="2019">960</periode>
+        <periode id="7" mes="OCT" any="2019">410</periode>
+    </consum>
+    -->

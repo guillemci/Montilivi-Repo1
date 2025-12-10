@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura moneda="EUR" idfactura="PML14349011N106">
+    <dades>
+        <logo>logo.png</logo>
+        <nfactura>PML14349011N106</nfactura>
+        <referencia>121901203779/03</referencia>
+        <datafactura>14/10/2019</datafactura>
+        <dataemissio>07/10/2019</dataemissio>
+        <datacarreg>14/10/2019</datacarreg>
+        <periodefactura>
+            <inici>04/08/2019</inici>
+            <final>02/10/2019</final>
+            <total>59 dies</total>
+        </periodefactura>
+    </dades>
+
+    <emissor>
+        <nomemissor>Endesa Energía, S.A. Unipersonal</nomemissor>
+        <CIF>28196547A</CIF>
+        <correu>info@endesa.com</correu>
+        <web>www.endesa.com</web>
+        <telf>9165489658</telf>
+        <adreça>
+            <direccio>Transformador nº60, 28042 Madrid</direccio>
+            <codiPostal>28042</codiPostal>
+            <poblacio>Madrid</poblacio>
+        </adreça>
+    </emissor>
+
+    <receptor>
+        <nomreceptor>
+            <nom>Matthew James</nom>
+            <cognoms>Bellamy</cognoms>
+        </nomreceptor>
+        <NIF>46058475J</NIF>
+        <correu>hysteria@muse.com</correu>
+        <telf>689215497</telf>
+        <adreça>
+            <direccio>Drones, 5-B</direccio>
+            <codiPostal>17001</codiPostal>
+            <poblacio>Girona</poblacio>
+        </adreça>
+    </receptor>
+
+    <totals>
+        <pagos>
+            <pagar idpago="potencia">47.52</pagar>
+            <pagar idpago="energia">67.77</pagar>
+            <pagar idpago="descuentos">-8.07</pagar>
+            <pagar idpago="otros">1.58</pagar>
+        </pagos>
+        <impostos>
+            <pagar idpago="IVA">29.48</pagar>
+        </impostos>
+        <totalfactura>138.28</totalfactura>
+    </totals>
+
+    <pagament estat="pendent">
+        <forma tipus="transferencia">
+            <datainicial>14/10/2019</datainicial>
+            <IBAN>
+                <codiestat>ES</codiestat>
+                <codicontrol>94</codicontrol>
+                <numero>ES9421002100573420257340</numero>
+            </IBAN>
+            <codmandato>E094210021005734020257340</codmandato>
+            <versio>0004</versio>
+        </forma>
+        <!--
+        <forma tipus="comptat">
+            <self-closing />
+        </forma>
+        <forma tipus="targeta">
+            <numero1></numero1>
+            <numero2></numero2>
+            <numero3></numero3>
+            <numero4></numero4>
+            <NomCognom></NomCognom>
+            <MesCaducitat></MesCaducitat>
+            <AnyCaducitat></AnyCaducitat>
+            <CVV></CVV>
+        </forma>
+        -->
+    </pagament>
+
+    <consum unitat="kWh">
+        <periode id="1">
+            <quantitat>470</quantitat>
+            <mes>AGO</mes>
+            <any>2018</any>
+        </periode>
+        <periode id="2">
+            <quantitat>460</quantitat>
+            <mes>OCT</mes>
+            <any>2018</any>
+        </periode>
+        <periode id="3">
+            <quantitat>510</quantitat>
+            <mes>DIC</mes>
+            <any>2018</any>
+        </periode>
+        <periode id="4">
+            <quantitat>784</quantitat>
+            <mes>FEB</mes>
+            <any>2019</any>
+        </periode>
+        <periode id="5">
+            <quantitat>530</quantitat>
+            <mes>ABR</mes>
+            <any>2019</any>
+        </periode>
+        <periode id="6">
+            <quantitat>960</quantitat>
+            <mes>AGO</mes>
+            <any>2019</any>
+        </periode>
+        <periode id="7">
+            <quantitat>410</quantitat>
+            <mes>OCT</mes>
+            <any>2019</any>
+        </periode>
+    </consum>
+
+    <peu_factura>
+        <publicitat>
+            <titular>CANVIA TU FORMA DE VER LA ENERGIA</titular>
+            <text_informatriu>
+                Coneix en detall el teu consum de llum, compara'l amb vivendes similars
+                i comença a estalviar en la teva factura. Entra a endesaclientes.com/infoenergia
+            </text_informatriu>
+        </publicitat>
+    </peu_factura>
+</factura>

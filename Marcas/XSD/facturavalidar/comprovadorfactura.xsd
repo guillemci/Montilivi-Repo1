@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- phonetype-->
+    <xs:simpleType name="phoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{6,15}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- emailtype-->
+    <xs:simpleType name="emailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@\s]+@[^@\s]+\.[^@\s]+" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- estattype-->
+    <xs:simpleType name="estatType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pendent" />
+            <xs:enumeration value="pagada" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ibantype-->
+    <xs:simpleType name="IBANType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}\d{2}\d{4}\d{4}\d{12}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- cardnumbertype-->
+    <xs:simpleType name="CardNumberType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{4}[ -]?){3}\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- cptipus 5 numeros -->
+    <xs:simpleType name="cpType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- nom maxim 50 -->
+    <xs:simpleType name="nomCognomType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- tipusnifcifpattern -->
+    <xs:simpleType name="tipus_atr_id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="nif|cif" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipus_base_id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[A-Z]" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="identificadorType">
+        <xs:simpleContent>
+            <xs:extension base="tipus_base_id">
+                <xs:attribute name="tipus" type="tipus_atr_id" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- adreçatipuss -->
+    <xs:complexType name="adrecaType">
+        <xs:sequence>
+            <xs:element name="carrer" type="xs:string" />
+            <xs:element name="numero" type="xs:string" />
+            <xs:element name="pis" type="xs:string" minOccurs="0" />
+            <xs:element name="porta" type="xs:string" minOccurs="0" />
+            <xs:element name="cp" type="cpType" />
+            <xs:element name="ciutat" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- personatype amb xall -->
+    <xs:complexType name="personaType">
+        <xs:all>
+            <xs:element name="nom" type="nomCognomType" />
+            <xs:element name="cognom1" type="nomCognomType" />
+            <xs:element name="cognom2" type="nomCognomType" minOccurs="0" />
+            <xs:element name="identificador" type="identificadorType" />
+            <xs:element name="web" type="xs:string" minOccurs="0" />
+            <xs:element name="email" type="emailType" minOccurs="0" />
+            <xs:element name="telefon" type="phoneType" minOccurs="0" />
+            <xs:element name="adreca" type="adrecaType" />
+        </xs:all>
+    </xs:complexType>
+
+    <!-- periodes consum -->
+    <xs:complexType name="periodeType">
+        <xs:sequence>
+            <xs:element name="quantitat" type="xs:decimal" />
+            <xs:element name="mes" type="xs:string" />
+            <xs:element name="any" type="xs:gYear" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:positiveInteger" use="required" />
+    </xs:complexType>
+
+    <!-- metodes pagament -->
+    <xs:complexType name="transferenciaType">
+        <xs:sequence>
+            <xs:element name="dataInici" type="xs:date" />
+            <xs:element name="iban" type="IBANType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- comptattype-->
+    <xs:complexType name="comptatType">
+        <xs:sequence>
+            <xs:element name="data" type="xs:date" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- targetatipus-->
+    <xs:complexType name="targetaType">
+        <xs:sequence>
+            <xs:element name="numero" type="CardNumberType" />
+            <xs:element name="nom" type="nomCognomType" />
+            <xs:element name="cognom" type="nomCognomType" />
+            <xs:element name="mesCad" type="xs:string" />
+            <xs:element name="anyCad" type="xs:string" />
+            <xs:element name="cvv" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- tipus pagament -->
+    <xs:complexType name="pagamentType">
+        <xs:sequence>
+            <xs:element name="forma">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:choice>
+                            <xs:element name="transferencia" type="transferenciaType" />
+                            <xs:element name="comptat" type="comptatType" />
+                            <xs:element name="targeta" type="targetaType" />
+                        </xs:choice>
+                    </xs:sequence>
+                    <xs:attribute name="tipus" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="transferencia" />
+                                <xs:enumeration value="comptat" />
+                                <xs:enumeration value="targeta" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- element root principal-->
+    <xs:element name="factura">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- dades factura -->
+                <xs:element name="dadesFact">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="logo" type="xs:string" minOccurs="0" />
+                            <xs:element name="numFactura" type="xs:positiveInteger" />
+                            <xs:element name="data" type="xs:date" />
+                            <xs:element name="missatge" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- emisor receptor -->
+                <xs:element name="emissor" type="personaType" />
+                <xs:element name="receptor" type="personaType" />
+
+                <!-- consum -->
+                <xs:element name="consum">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="periode" type="periodeType"
+                                maxOccurs="unbounded" minOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="unitat" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- resum -->
+                <xs:element name="resum">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="subtotal" type="xs:decimal" />
+                            <xs:element name="iva" type="xs:decimal" />
+                            <xs:element name="total" type="xs:decimal" />
+                        </xs:sequence>
+                        <xs:attribute name="estat" type="estatType" use="required" />
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- pagament -->
+                <xs:element name="pagament" type="pagamentType" minOccurs="0" />
+
+                <!-- peu de factura -->
+                <xs:element name="peu" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="publicitat">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="300" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+
+            <!-- atributs del element root -->
+            <xs:attribute name="moneda" type="xs:string" use="required" />
+            <xs:attribute name="id" type="xs:string" use="required" />
+            <xs:attribute name="versio" type="xs:string" use="optional" />
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

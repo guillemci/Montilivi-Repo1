@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="comprovadorfactura.xsd"
+    moneda="EURO" id="FACT" versio="3.0">
+
+    <dadesFact>
+        <logo>https://www.empresa.com/logo.png</logo>
+        <numFactura>abc123</numFactura>
+        <data>2023-13-45</data>
+        <missatge>Gràcies per confiar en nosaltres</missatge>
+    </dadesFact>
+
+    <emissor>
+        <nom>nom extremadament llarg que supera clarament els cinquanta caràcters
+            permesos pel XSD</nom>
+        <cognom1>SA</cognom1>
+        <identificador tipus="cif">123</identificador>
+        <web>www.empresa.com</web>
+        <email>correo_sin_arroba_punt</email>
+        <telefon>abc123</telefon>
+        <adreca>
+            <carrer>Carrer Principal</carrer>
+            <numero>1</numero>
+            <pis>1</pis>
+            <porta>A</porta>
+            <cp>0800A</cp>
+            <ciutat>Barcelona</ciutat>
+        </adreca>
+    </emissor>
+
+    <receptor>
+        <nom>Maria</nom>
+        <cognom1>García</cognom1>
+        <identificador tipus="nif">12345678</identificador>
+        <adreca>
+            <carrer>Altres Carrer</carrer>
+            <numero>2</numero>
+            <cp>08001</cp>
+            <ciutat></ciutat>
+        </adreca>
+    </receptor>
+
+    <consum unitat="kWh">
+    </consum>
+
+    <resum estat="cancelada">
+        <subtotal>100.50</subtotal>
+        <iva>21.00</iva>
+        <total>121.50</total>
+    </resum>
+
+    <pagament>
+        <forma tipus="paypl">
+            <transferencia>
+                <dataInici>2023-10-15</dataInici>
+                <iban>ES91</iban>
+            </transferencia>
+        </forma>
+    </pagament>
+
+    <peu>
+        <publicitat>
+            Publicitat normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat
+            normal.Publicitat normal.Publicitat normal.Publicitat normal.Publicitat normal.
+        </publicitat>
+    </peu>
+
+</factura>

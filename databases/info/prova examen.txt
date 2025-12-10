@@ -1,9 +1,0 @@
-select LAST_NAME, DEPARTMENT_ID FROM EMPLOYEES WHERE DEPARTMENT_ID IN (20, 50) ORDER BY LAST_NAME;
-
-select LAST_NAME FROM EMPLOYEES WHERE SUBSTRING(LAST_NAME, 3, 1) = 'a';
-
-select empl_nom, empl_comissio from EMPL where empl_comissio IS NULL;
-
-select CONCAT(SUBSTRING(malalt_nom, (LENGTH(malalt_nom) - 1), 2)," ", LEFT(malalt_nom, (LENGTH(malalt_nom) - 2))) from malalt;
-
-select CONCAT(SUBSTRING(malalt_nom, (LENGTH(malalt_nom) - 1), 2)," ", LEFT(malalt_nom, (LENGTH(malalt_nom) - 2))) AS "nom i cognom", TIMESTAMPDIFF(YEAR, malalt_dnaixa, CURDATE()) as anys from malalt where TIMESTAMPDIFF(YEAR, malalt_dnaixa, CURDATE()) >= 40 ORDER BY malalt_dnaixa DESC;
