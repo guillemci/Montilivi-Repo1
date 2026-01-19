@@ -1,0 +1,145 @@
+﻿namespace Llistes
+{
+    public class MetodesLlistes
+    {
+        public static void Main()
+        {
+        }
+        // --- LLISTES ---
+        /// <summary>
+        /// Exercici 01
+        /// Retorna una llista amb els n primers números naturals.
+        /// Exemple: n=3 -> [1, 2, 3]
+        /// </summary>
+        public static List<int> OmpleNaturals(int n) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 02
+        /// Retorna una llista amb n números enters aleatoris entre -100 i 100.
+        /// </summary>
+        public static List<int> GeneraLlista(int n, int llavor) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 03
+        /// Retorna la suma de tots els elements de la llista.
+        /// </summary>
+        public static int SumaLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 04
+        /// Retorna el valor més petit de la llista.
+        /// </summary>
+        public static int MinimLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 05
+        /// Retorna l'índex (posició) del valor més petit de la llista.
+        /// Si hi ha empats,
+        /// /// </summary>
+        public static int PosicioMinimLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 06
+        /// Retorna el valor més gran de la llista.
+        /// </summary>
+        public static int MaximLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 07
+        /// Retorna el promig de tots els elements de la llista.
+        /// </summary>
+        public static double MitjanaLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 08
+        /// MODIFICA la llista original, invertint l'ordre dels seus elements.
+        /// (El primer element passa a ser l'últim, el segon el penúltim, etc.)
+        /// </summary>
+        public static void CapgiraLlista(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 09
+        /// Retorna la primera posició (índex) on apareix 'valor' a la llista.
+        /// Si 'valor' no apareix, retorna -1.
+        /// </summary>
+        public static int PosicioDe(List<int> llista, int valor) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 10
+        /// Retorna 'true' si 'valor' apareix dins la llista, cridant a 'PosicioDe'.
+        /// </summary>
+        public static bool Conte(List<int> llista, int valor) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 11
+        /// Retorna 'true' si 'valor' apareix a la llista dins l'interval
+        /// d'índexs [indexDesDe, indexFinsA] (ambdós inclosos).
+        /// </summary>
+        public static bool ConteEnRang(List<int> llista, int valor, int indexDesDe, int indexFinsA) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 12
+        /// Retorna un string amb el contingut de la llista, formatat.
+        /// Exemple: per a {10, 20} ha de retornar "Index 0: 10\nIndex 1: 20"
+        /// </summary>
+        public static string LlistaAString(List<int> llista) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 13
+        /// Donades dues llistes ordenades i sense elements repetits, retorna una nova llista amb els elements COMUNS.
+        /// </summary>
+        public static List<int> ComunsOrdenades(List<int> llista1, List<int> llista2) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 14
+        /// Donades dues llistes ordenades i sense elements repetits, retorna una nova llista amb els elements NO COMUNS
+        /// (elements que estan a llista1 però no a llista2, i elements de llista2 que no estan a llista1).
+        /// </summary>
+        public static List<int> NoComunsOrdenades(List<int> llista1, List<int> llista2) => throw new NotImplementedException();
+        /// <summary>
+        /// /// Exercici 15
+        /// Donades dues llistes ordenades i sense elements repetits, retorna una nova llista (ordenada)
+        /// que és la FUSIÓ de les dues, però sense elements repetits
+        /// </summary>
+        public static List<int> FusioOrdenades(List<int> llista1, List<int> llista2) => throw new NotImplementedException();
+
+        // --- LLISTES DE LLISTES (MATRIUS) ---
+        /// <summary>
+        /// Exercici 16
+        /// Retorna una matriu NxM plena per files.
+        /// Exemple (nFiles=3, nColumnes=2):
+        /// {{1, 1}
+        /// {2, 2}
+        /// {3, 3}}
+        public static List<List<int>> OmpleMatriuPerFiles(int nFiles, int nColumnes) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 17
+        /// Retorna una matriu NxM plena per columnes.
+        /// Exemple (nFiles=3, nColumnes=2):
+        /// {{1, 2}
+        /// {1, 2}
+        /// {1, 2}}
+        /// </summary>
+        public static List<List<int>> OmpleMatriuPerColumnes(int nFiles, int nColumnes) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 18
+        /// Retorna una matriu NxM plena amb números naturals consecutius (començant per 1).
+        /// Exemple (nFiles=2, nColumnes=3):
+        /// {{1, 2, 3}
+        /// {4, 5, 6}}
+        /// </summary>
+        public static List<List<int>> OmpleMatriuConsecutius(int nFiles, int nColumnes) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 19
+        /// Retorna una matriu NxM plena amb números naturals consecutius en ordre invers.
+        /// Exemple (nFiles=2, nColumnes=3) -> Total 6 elements:
+        /// {{6, 5, 4}
+        /// {3, 2, 1}}
+        /// </summary>
+        public static List<List<int>> OmpleMatriuConsecutiusInvers(int nFiles, int nColumnes) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 20
+        /// Retorna una matriu quadrada NxN que és la matriu identitat.
+        /// (1 a la diagonal, 0 a la resta).
+        /// </summary>
+        public static List<List<int>> OmpleMatriuIdentitat(int nFiles) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 21
+        /// Retorna el valor més petit dins de la 'matriu'.
+        /// </summary>
+        public static int MinimMatriu(List<List<int>> matriu) => throw new NotImplementedException();
+        /// <summary>
+        /// Exercici 22
+        /// Retorna una llista de 2 enters {fila, columna} amb la posició
+        /// del valor més petit de la 'matriu'.
+        /// </summary>
+        public static int[] PosicioMinimMatriu(List<List<int>> matriu) => throw new NotImplementedException();
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Postals Nadal</title>
+
+</head>
+
+<body>
+    <div class="fixed-size">
+        <header>
+            <h1>Generador de Postals</h1>
+        </header>
+
+        <main>
+            <div class="flexcontainer">
+                <div class="boxdiv">
+                    <div class="boxoptions">
+                        <p>Missatge</p>
+                        <input type="text" id="missatge">
+                    </div>
+                    <div class="boxoptions">
+                        <p>Color del text</p>
+                        <input type="color" id="color">
+                    </div>
+                    <div class="boxoptions">
+                        <p>Mida del text</p>
+                        <input type="number" id="mida">
+                    </div>
+                    <div class="boxoptions">
+                        <p>Posicio del text</p>
+                        <select id="posicio">
+                            <option value="15%">Dalt</option>
+                            <option value="50%">Centre</option>
+                            <option value="85%">Abaix</option>
+                        </select>
+                    </div>
+                    <div class="boxoptions">
+                        <p>Imatge de fons</p>
+                        <select id="fons">
+                            <option value="./images/winter1.jpg">arbres invernals</option>
+                            <option value="./images/candy.jpg">caramels</option>
+                            <option value="./images/kings.jpg">reis mags</option>
+                            <option value="./images/ginger.jpg">casa de gengibre</option>
+                        </select>
+                    </div>
+                    <div class="boxoptions">
+                        <button class="button" type="button" id="boto">Generar Imatge</button>
+                    </div>
+                </div>
+                <div class="boxdiv2">
+                    <img src="./images/nothing.jpg" class="image" id="fotoPostal">
+                    <div class="postaltext" id="postaltext"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./scripts.js" defer></script>
+</body>
+
+</html>

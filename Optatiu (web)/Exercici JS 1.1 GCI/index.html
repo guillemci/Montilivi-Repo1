@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="fixed-size2" id="body">
+  <header>
+    <div>
+      <h1>Endevina el numero!</h1>
+      <p class="textcenter">
+        aquest joc consistira en endevinar un numero ubicat entre el 1 i el
+        100, <span>tens 10 intents</span> bona sort!
+      </p>
+    </div>
+  </header>
+  <main>
+    <hr>
+    <h2>JOC</h2>
+    <p>introdueix el numero!</p>
+    <input type="text" id="camp" /><br /><br />
+    <button id="comprova">Comprova</button><br /><br />
+    <hr>
+    <div class="divpista" id="pistacolor">
+      <h2>PISTA</h2>
+      <p id="pistatext">de moment no hi ha cap pista</p>
+    </div>
+    <div class="divcorrecteincorrecte" id="correcteincorrecte">correcte/incorrecte</div>
+  </main>
+
+  <script>
+    let intents = 0;
+    let random = Math.floor(Math.random() * 100) + 1;
+    let jugardenou = false;
+
+    const input = document.getElementById("camp");
+    const boto = document.getElementById("comprova");
+
+    boto.addEventListener("click", function () {
+      if (jugardenou) {
+        jugardenou = false;
+        intents = 0;
+        random = Math.floor(Math.random() * 100) + 1;
+
+        correcteincorrecte.textContent = "correcte/incorrecte";
+        correcteincorrecte.style.backgroundColor = "";
+        pistatext.textContent = "de moment no hi ha cap pista";
+        pistacolor.style.backgroundColor = "";
+        body.style.backgroundColor = "";
+        comprova.textContent = "Comprova";
+        return;
+      }
+
+      let valor = parseInt(input.value);
+      input.value = "";
+      input.focus();
+
+      if (valor === random) {
+        correcteincorrecte.style.backgroundColor = "rgb(207, 230, 173)";
+        correcteincorrecte.textContent = "Felicitats! Has encertat en " + intents + " intents.";
+        body.style.backgroundColor = "rgb(50, 75, 51)";
+        comprova.textContent = "Jugar de nou";
+        jugardenou = true;
+      }
+      else if (intents >= 10) {
+        correcteincorrecte.style.backgroundColor = "salmon";
+        correcteincorrecte.textContent = "Has perdut! El numero era " + random;
+        comprova.textContent = "Jugar de nou";
+        jugardenou = true;
+      }
+      else if (Math.abs(valor - random) <= 5) {
+        correcteincorrecte.style.backgroundColor = "salmon";
+        correcteincorrecte.textContent = "Incorrecte! et queden " + (10 - intents) + " intents.";
+        pistacolor.style.backgroundColor = "limegreen";
+        pistatext.textContent = "Ets molt a prop el tens en un rang de 5 numeros";
+        intents++;
+      }
+      else if (valor < 1 || valor > 100 || isNaN(valor)) {
+        alert("tens que posar un numero entre 1 i 100");
+      }
+      else {
+        correcteincorrecte.style.backgroundColor = "salmon";
+        correcteincorrecte.textContent = "Incorrecte! et queden " + (10 - intents) + " intents.";
+        pistatext.textContent = "de moment no hi ha cap pista";
+        pistacolor.style.backgroundColor = "";
+        intents++;
+      }
+    });
+  </script>
+</body>
+
+</html>

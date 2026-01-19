@@ -1,0 +1,88 @@
+p6
+Ex01: SELECT LAST_NAME, DEPARTMENT_ID, DEPARTMENT_NAME FROM EMPLOYEES JOIN DEPARTMENTS USING(DEPARTMENT_ID);
+
+Ex02: SELECT DISTINCT(JOB_ID) FROM EMPLOYEES JOIN DEPARTMENTS USING (DEPARTMENT_ID) WHERE DEPARTMENT_ID = 80;
+
+EX03: SELECT LAST_NAME, DEPARTMENT_NAME, LOCATION_ID, CITY FROM DEPARTMENTS JOIN EMPLOYEES USING (DEPARTMENT_ID) JOIN LOCATIONS USING(LOCATION_ID) WHERE COMMISSION_PCT IS NOT NULL;
+
+
+p8
+Ex01: SELECT AVG(plantilla_salari) "Sou Mig" FROM plantilla WHERE plantilla_funcio = 'intern'
+
+Ex02: SELECT MAX(plantilla_salari) "maxim", MIN(plantilla_salari) "minim", MAX(plantilla_salari) - MIN(plantilla_salari) "diferencia" FROM plantilla
+
+Ex03: SELECT COUNT(DISTINCT(plantilla_funcio)) "cosica" from plantilla WHERE plantilla_hospital_codi = 22;
+
+Ex04: SELECT plantilla_torn, COUNT(plantilla_torn) "TOTAL" FROM plantilla GROUP BY plantilla_torn HAVING COUNT(plantilla_torn) > 2;
+
+Ex05: SELECT AVG(TIMESTAMPDIFF(YEAR, malalt_dnaixa, CURRENT_DATE())) "mitjana" from malalt;
+
+Ex06: SELECT plantilla_hospital_codi, plantilla_sala_codi, COUNT(plantilla_sala_codi) "Quants", AVG(plantilla_salari)  "Mitjana Sou" from plantilla GROUP BY plantilla_hospital_codi, plantilla_sala_codi;
+
+Ex07: SELECT COUNT(malalt_nss) - COUNT(DISTINCT(malalt_nss)) from malalt;
+
+Ex08 SELECT plantilla_hospital_codi, plantilla_sala_codi, COUNT(plantilla_hospital_codi) "Empleats" FROM plantilla WHERE plantilla_hospital_codi = 22 GROUP BY plantilla_hospital_codi, plantilla_sala_codi HAVING COUNT(plantilla_hospital_codi) >= 2;
+
+Ex09: SELECT SUM(hospital_nllits) "Llists totals", AVG(hospital_nllits) "Mitjana de llits" FROM hospital;
+
+Ex10: 
+a  SELECT AVG(empl_comissio) Mitjana
+FROM empl;
+
+b SELECT SUM(empl_comissio) / COUNT(*) Mitjana
+FROM empl;
+
+solucio SELECT SUM(empl_comissio) / COUNT(*) Mitjana FROM empl WHERE empl_comissio IS NOT NULL;
+
+Ex11: SELECT malalt_sexe "Sexe", COUNT(*) "Total" FROM malalt GROUP BY malalt_sexe;
+
+Ex12: SELECT sala_nom, SUM(sala_nllits) "Suma Llits" FROM sala GROUP BY sala_nom;
+
+Ex13: SELECT doctor_hospital_codi "Hospital", COUNT(*) "Quants"
+FROM doctor
+WHERE doctor_especialitat != 'Neurologia'
+GROUP BY doctor_hospital_codi;
+
+Ex14: SELECT hospital_nom "Hospital", SUM(sala_nllits) "Quants"
+FROM sala JOIN hospital ON (sala_hospital_codi = hospital_codi)
+GROUP BY sala_hospital_codi, hospital_nom
+HAVING SUM(sala_nllits) > 65;
+
+Ex15: SELECT plantilla_hospital_codi, plantilla_sala_codi,
+       plantilla_funcio, plantilla_torn, COUNT(*) "Quants"
+FROM plantilla
+GROUP BY plantilla_hospital_codi, plantilla_sala_codi,
+         plantilla_funcio, plantilla_torn;
+
+Ex16: SELECT malalt_sexe, MAX(malalt_dnaixa) "Més Jove", MIN(malalt_dnaixa) "Més gran"
+FROM malalt
+GROUP BY malalt_sexe;
+
+ex17: SELECT plantilla_hospital_codi "Hospital", COUNT(*) "Quants"
+FROM plantilla
+WHERE plantilla_torn = 'T'
+GROUP BY plantilla_hospital_codi
+HAVING COUNT(*) >= 2;
+
+ex18: SELECT plantilla_hospital_codi Hospital
+FROM plantilla
+WHERE plantilla_sala_codi = 6 AND plantilla_torn = 'T'
+GROUP BY plantilla_hospital_codi, plantilla_sala_codi
+HAVING COUNT(*) >= 2;
+
+ex19: SELECT sala_hospital_codi, SUM(sala_nllits) "Llits Totals"
+FROM sala
+GROUP BY sala_hospital_codi
+ORDER BY SUM(sala_nllits) DESC;
+
+ex20: SELECT empl_dept_num, ROUND(AVG(empl_salari), 2) "Sou mig"
+FROM empl
+WHERE YEAR(empl_datalt) = 1981
+GROUP BY empl_dept_num
+ORDER BY 2;
+
+ex21: SELECT plantilla_hospital_codi "Hospital", COUNT(*)
+FROM plantilla
+WHERE plantilla_funcio = 'Infermera' AND plantilla_torn = 'T'
+GROUP BY plantilla_hospital_codi
+HAVING COUNT(*) >= 2;

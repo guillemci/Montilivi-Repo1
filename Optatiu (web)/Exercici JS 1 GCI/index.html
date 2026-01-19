@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endevina el número</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+        }
+
+        input {
+            font-size: 1.2em;
+            padding: 10px;
+            width: 100px;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #missatge {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #pista,
+        #pista2 {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🤔 Endevina un número entre 1 i 100</h1>
+
+    <input type="number" min="1" max="100" id="numeroUsuari" placeholder="Número">
+    <button id="botoComprovar">Comprova</button>
+    <button id="botoReinicia">Reinicia</button>
+
+    <p id="missatge">Molta sort!</p>
+    <p id="pista">De moment no hi ha cap pista</p>
+    <p id="pista2"></p>
+
+    <script>
+        let intents = 0;
+        let random = Math.floor(Math.random() * 100) + 1;
+        let jugardenou = false;
+
+        // Elements (es millor cridar constants per el que he vist en comptes de fer document.getElementById("...") = ...)
+        const input = document.getElementById("numeroUsuari");
+        const boto = document.getElementById("botoComprovar");
+        const missatge = document.getElementById("missatge");
+        const pista = document.getElementById("pista");
+        const pista2 = document.getElementById("pista2");
+        const body = document.body;
+        const botoReinicia = document.getElementById("botoReinicia");
+
+        function començarNouJoc() {
+            intents = 0;
+            random = Math.floor(Math.random() * 100) + 1;
+            jugardenou = false;
+            missatge.textContent = "Molta sort!";
+            missatge.style.color = "";
+            missatge.style.backgroundColor = "";
+            pista.textContent = "De moment no hi ha cap pista";
+            body.style.backgroundColor = "";
+            boto.textContent = "Comprova";
+            input.value = "";
+            input.focus();
+            pista2.textContent = "";
+            pista2.style.backgroundColor = "";
+        }
+
+        document.getElementById("botoComprovar").onclick = function () {
+            if (jugardenou) {
+                començarNouJoc();
+                return;
+            }
+
+            let valor = parseInt(input.value);
+
+
+            if (isNaN(valor) || valor < 1 || valor > 100) {
+                missatge.textContent = "El número ha de ser entre 1 i 100!";
+                missatge.style.backgroundColor = "salmon";
+                missatge.style.color = "red";
+                input.value = "";
+                input.focus();
+                return;
+            }
+
+            //input clean i focus
+            input.value = "";
+            input.focus();
+
+            if (valor === random) {
+                // victoria
+                missatge.textContent = "🎉 HAS ENCERTAT EN " + (intents + 1) + " INTENTS!";
+                missatge.style.color = "green";
+                missatge.style.backgroundColor = "rgb(207, 230, 173)";
+                pista.textContent = "";
+                pista2.textContent = "";
+                pista2.style.backgroundColor = "";
+                boto.textContent = "Jugar de nou";
+                jugardenou = true;
+            }
+            else if (intents >= 9) {
+                // perdre
+                missatge.textContent = "HAS PERDUT!";
+                missatge.style.color = "red";
+                pista.textContent = "El número era " + random;
+                pista2.textContent = "";
+                pista2.style.backgroundColor = "";
+                boto.textContent = "Jugar de nou";
+                jugardenou = true;
+            }
+            else {
+                intents++;
+                pista2.textContent = "";
+
+                // pistes
+                if (valor < random) {
+                    missatge.style.color = "black";
+                    missatge.textContent = "Incorrecte! Portes " + intents + " intents";
+                    missatge.style.backgroundColor = "salmon";
+                    pista.textContent = "🔼 És més gran";
+                    pista.style.color = "blue";
+                } else {
+                    missatge.style.color = "black";
+                    missatge.textContent = "Incorrecte! Portes " + intents + " intents";
+                    missatge.style.backgroundColor = "salmon";
+                    pista.textContent = "🔽 És més petit";
+                    pista.style.color = "blue";
+                }
+
+                if (Math.abs(valor - random) <= 5) {
+                    missatge.style.backgroundColor = "salmon";
+                    missatge.style.color = "black";
+                    missatge.textContent = "Incorrecte! Portes " + intents + " intents";
+                    pista2.textContent = "és molt a prop!";
+                    pista2.style.color = "orange";
+                    pista2.style.backgroundColor = "gold";
+                }
+            }
+        }
+
+        // reinicia el joc
+        botoReinicia.addEventListener("click", començarNouJoc);
+    </script>
+</body>
+
+</html>

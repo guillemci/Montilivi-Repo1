@@ -1,0 +1,49 @@
+'%x'
+equival a dir-li a una consulta que ignori tots els caracters que hi hagi radera la x
+
+'_x'
+comprovador que demana que hi hagi un caracter abans de la x
+
+where
+serveix per aplicar condicions a una consulta select
+
+between 
+serveix per comprovar que hi hagi x cosa entre dos unitats
+
+AND
+serveix per posar mes d'una condicio a compliar
+
+OR
+serveix per mirar que es compleixin alguna de les condicions estableertes
+
+FROM
+serveix per indicar de quina taula s'ha d'agafar informacio
+
+IS
+una "funcio" la qual es un comprovador igual que = pero mes versatil
+exemple
+age is(20, 40, 60);
+
+IF
+es un condicional que es fa la pregunta si x 
+
+NULL
+es un camp el qual no conte cap informacio
+
+LIKE
+te una funcio similar al =
+
+ORDER BY
+serveix per ordenar una querry
+exemple = DESC
+
+DISTINCT
+serveix per agafar tots els valors que siguin diferents entre ells
+
+CASE
+serveix per assignar diferents resultats depenent de la condicio, també et deixa ficar un comprovador que miri "en cas de que no es compleixi ninguna de les altres"
+CASE
+	WHEN condicio1 THEN resultat1
+	WHEN condicio2 THEN resultat2
+	ELSE resultat
+END;

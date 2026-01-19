@@ -1,0 +1,75 @@
+CONCAT
+Concat serveix per com diu el seu nom concatenar diferents columnes, es a dir consultes en una de sola
+//exemple d'us
+SELECT CONCAT(FIRST_NAME," ",LAST_NAME) FROM EMPLOYEES;
+
+CONCAT_WS
+Concat_ws te un us similar al CONCAT normal pero amb la particularitat de que aquest li pots delimitar el tipus d'espaiat (a diferencia del altre on tens que posar " "
+SELECT CONCAT(' ',"Hola",FIRST_NAME,LAST_NAME)
+
+LPAD
+serveix per repetir un numero de caracters de dreta a esquerra tantes vegades com s'indiqui en cas de que hi hagi uns caracters entre mitg els "contara" es a dir si hi ha la paraula mates i tu li indicas 6 repeticions de "ABC" nomes escriura la A, en cas de 7 AB en cas de 8 ABC i aixi
+SELECT LPAD("SQL Tutorial",13, "ABC");
+
+RPAD
+el matiex pero de esquerra a dreta
+SELECT RPAD("SQL Tutorial",13, "ABC");
+
+LEFT
+left extreu una serie de caracters de la esquerra del text (tu li pots delimitar quants caracters extreure)
+SELECT LEFT("SQL Tutorial", 3) AS ExtractString;
+
+RIGHT
+el mateix que LEFT pero de dreta a esquerra
+SELECT RIGHT("SQL Tutorial is cool", 4) AS ExtractString;
+
+SUBSTRING
+substring es com un right i left pero mes especific et permet extreure els caracters que tu vulguis indicant-li tu els parametres, es llegeis de esquerra a dreta i va del 1 al "infinit"
+tu per especificar un camp li posas des d'on a de començar a llegir + els caracters a llegir
+SELECT SUBSTRING("SQL Tutorial", 1, 5) AS ExtractString; = SQL T
+SELECT SUBSTRING("SQL Tutorial", 5, 5) AS ExtractString; = Tutor
+
+
+INSTR
+intr et busca el primer caracter que sigui igual al especificat, va d'esquerra a dreta 
+SELECT INSTR("Guillem", "l") AS MatchPosition; = 4
+
+LOWER
+et posa tots els caracters que li donis a minuscula
+SELECT LOWER(HOLA); = hola
+
+UPPER
+et dona tots els caracters introduits a majuscula
+SELECT UPPER(hola); = HOLA
+
+LENGTH
+basant-se amb els caracters que li introdueixis et donara un numero que sera equivalent al numero de caracters
+SELECT LENGTH(hola); = 4
+
+LOCATE
+locate et diu la posicio del primer caracter que hagis especificat trovar llegint de esquerra a dreta
+SELECT LOCATE("3", "Gui3lem"); = 4
+
+TRIM
+trim serveix per treure tots els caracters que corresponguin a un espaiat abans de trovar un caracter o fa des de la dreta i l'esquerra
+SELECT TRIM("  HOLA  "); = (HOLA)
+
+LTRIM
+funciona igual que el trim pero nomes treu els caracters de la esquerra
+
+RTRIM
+funciona igual que el trim pero nomes treu els caracters de la dreta
+
+REPEAT
+serveix per repetir un caracter els cops que necesitis donada una quantitat
+SELECT REPEAT("HOLA ", 3); = HOLA HOLA HOLA
+
+REPLACE
+serveix per remplaçar els caracters que vulguis per els caracters que tu especifiquis
+SELECT REPLACE("HTML TUTORIAL", "HTML", "SQL"); = SQL TUTORIAL
+
+FORMAT
+serveix per arrodonir numeros a la cantitat desitjada
+SELECT FORMAT(2500.3634, 2); = 2500.36
+SELECT FORMAT (2500.72, 0); = 2501
+
