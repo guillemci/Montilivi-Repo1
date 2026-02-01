@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rellotge amb alarma</title>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-size: 1vw;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    #zonaRellotge {
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #zonaAlarmaActiva {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #zonaConfigAlarma {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5vh;
+    }
+
+    #rellotge {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12vw;
+      font-weight: bold;
+      padding: 0.25em 0.5em;
+    }
+
+    #alarma {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: rgb(65, 65, 65);
+      margin-bottom: 2vh;
+      width: 44vw;
+      height: 4vw;
+      border-radius: 20px;
+    }
+
+    button {
+      width: 10vw;
+      height: 3vw;
+      background-color: rgb(180, 204, 218);
+      color: white;
+      border: 2px solid;
+      cursor: pointer;
+      border-color: aliceblue;
+      margin-bottom: 3vh;
+      font-size: 1vw;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="zonaRellotge">
+      <span id="rellotge"></span>
+    </div>
+    <div id="zonaAlarmaActiva">
+      <h1>gestor d'alarmes</h1>
+      <span>
+        <div id="alarma">alarma hora</div>
+      </span>
+      <button>activar/desactivar</button>
+
+    </div>
+
+    <div id="zonaConfigAlarma">
+      <div>
+        <h1>Configurar alarma</h1>
+      </div>
+      <div>
+        <label>Hora:</label>
+        <input id="alarmaHora" type="number" min="0" max="23" />
+        <label>Minut:</label>
+        <input id="alarmaMinut" type="number" min="0" max="59" />
+      </div>
+    </div>
+  </div>
+  <script>
+    function llegirHora() {
+      const ara = new Date();
+      let hora = ara.getHours();
+      let minut = ara.getMinutes();
+      let segon = ara.getSeconds();
+
+      function posarZeroDavant(numero) {
+        if (numero < 10) numero = "0" + numero;
+        return numero;
+      }
+
+      hora = posarZeroDavant(hora);
+      minut = posarZeroDavant(minut);
+      segon = posarZeroDavant(segon);
+
+      return hora + ":" + minut + ":" + segon;
+    }
+
+    function pintarHora() {
+      const caixaRellotge = document.getElementById("rellotge");
+      caixaRellotge.innerHTML = llegirHora();
+    }
+
+    setInterval(pintarHora, 1000);
+    pintarHora();
+  </script>
+
+</body>
+
+</html>
