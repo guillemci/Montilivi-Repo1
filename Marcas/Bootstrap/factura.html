@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <title>Exemple Bootstrap</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="Bootstrap5.3.8/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- bootstrap  JS-->
+  <script src="Bootstrap5.3.8/js/bootstrap.bundle.min.js"></script>
+  <!-- bootstrap icons-->
+  <link rel="stylesheet" href="bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
+</head>
+
+<body>
+  <div class="container col-md-8">
+    <!--1row-->
+    <div class="row mt-4 mt-3">
+      <!--columna1-->
+      <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow">
+          <img src="./logos/logo.png" class="card-img-top img-fluid" alt="logo" />
+        </div>
+      </div>
+      <!--columna2-->
+      <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-1"><i class="bi bi-lightning me-2"></i>DADES DE LA FACTURA</h4>
+          </div>
+          <div class="card-body">
+            <p class="mb-0">Núm. factura: PML1434901N106</p>
+            <p class="mb-0">Referència: 121901203779/03</p>
+            <p class="mb-0">Data d’emissió: <b>07/10/2019</b></p>
+            <p class="mb-0">
+              <b>Període de facturació: del 04/08/2019 al 02/10/2019 (59 dies)</b>
+            </p>
+            <p class="mb-0">Data de càrrec: 14 d’octubre de 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--2row-->
+    <div class="row">
+      <!--columna1-->
+      <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <h5><b>Emissor:</b></h5>
+            <p class="mb-1">Endesa Energía, S.A. Unipersonal</p>
+            <p class="mb-1">CIF: 28196547A</p>
+            <p class="mb-1">Adreça: Transformador, núm. 60</p>
+            <p class="mb-1">Correu: info@endesa.com</p>
+            <p class="mb-1">Web: endesa.com</p>
+            <p class="mb-1">Telèfon: 9165489658</p>
+            <p class="mb-1">28042, MADRID</p>
+            <p class="mb-1">MADRID</p>
+          </div>
+        </div>
+      </div>
+      <!--columna2-->
+      <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow">
+          <div class="card-body ">
+            <h5><b>Receptor:</b></h5>
+            <p class="mb-1">Nom: MATTHEW JAMES BELLAMY</p>
+            <p class="mb-1">NIF: 40568745J</p>
+            <p class="mb-1">Adreça: Drones, 5-B</p>
+            <p class="mb-1">Correu: hysteria@muse.com</p>
+            <p class="mb-1">Telèfon: 689215497</p>
+            <p class="mb-1">17001, GIRONA</p>
+            <p class="mb-1">GIRONA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--3row-->
+    <div class="row" >
+      <div class="col-md-12 mb-3">
+        <div class="card h-100 shadow">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-1"><i class="bi bi-credit-card-2-back me-2"></i>RESUM DE LA FACTURA I DADES DE PAGAMENT</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                  <div class="card-body">
+
+                    <div class="row mb-1 mt-4">
+                      <div class="col-6 fs-5">Potència</div>
+                      <div class="col-6 fs-5 text-end">47,52 €</div>
+                    </div>
+
+                    <div class="row mb-1">
+                      <div class="col-6 fs-5">Energia</div>
+                      <div class="col-6 fs-5 text-end">67,77 €</div>
+                    </div>
+
+                    <div class="row mb-1">
+                      <div class="col-6 fs-5">Descomptes</div>
+                      <div class="col-6 fs-5 text-end">-8,07 €</div>
+                    </div>
+
+                    <div class="row mb-1">
+                      <div class="col-6 fs-5">Altres</div>
+                      <div class="col-6 fs-5 text-end">1,58 €</div>
+                    </div>
+
+                    <div class="row mb-1">
+                      <div class="col-6 fs-5">Impostos</div>
+                      <div class="col-6 fs-5 text-end">29,48 €</div>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="row">
+                      <div class="col-6 fs-4 fw-bold">Total</div>
+                      <div class="col-6 fs-4 fw-bold text-end">138,28 €</div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <form>
+                      <div class="mb-2">
+                        <label class="form-label">Mètode</label>
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="metodepagament" id="card" checked />
+                          <label class="form-check-label" for="card">Targeta</label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="metodepagament" id="transfer" />
+                          <label class="form-check-label" for="transfer">Transferència</label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="metodepagament" id="cash" />
+                          <label class="form-check-label" for="cash">Comptat</label>
+                        </div>
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="seguiment" class="col-form-label">Voleu rebre un seguiment?<b class="text-danger">*</b></label>
+                        <select id="seguiment" name="seguiment" class="form-select" required>
+                          <option value="" selected>Seleccioneu una opció</option>
+                          <option value="si">Sí</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="pagamentRef" class="form-label">Número de targeta<b class="text-danger">*</b></label>
+                        <input type="text" class="form-control" id="pagamentRef"
+                          placeholder="0000 0000 0000 0000 0000" />
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="paymentNotes" class="form-label">Observacions</label>
+                        <textarea class="form-control" id="paymentNotes" rows="2"
+                          placeholder="Notes de pagament"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--4row-->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <div class="card h-100 shadow">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-1"><i class="bi bi-info-circle me-2"></i>INFORMACIÓ DE LA FACTURA</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <div class="card">
+                  <div class="card-header"><b>Períodes de consum</b></div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tbody class="mb-0">
+                          <tr><th scope="row">1</th><td>470 kWh</td><td>AGO</td><td>2018</td></tr>
+                          <tr><th scope="row">2</th><td>460 kWh</td><td>OCT</td><td>2018</td></tr>
+                          <tr><th scope="row">3</th><td>510 kWh</td><td>DIC</td><td>2018</td></tr>
+                          <tr><th scope="row">4</th><td>784 kWh</td><td>FEB</td><td>2019</td></tr>
+                          <tr><th scope="row">5</th><td>950 kWh</td><td>AGO</td><td>2019</td></tr>
+                          <tr><th scope="row">6</th><td>410 kWh</td><td>OCT</td><td>2019</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                  <div class="card-header"><b>Evolució del consum</b></div>
+                  <div class="card-body"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--5row-->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <div class="card h-100 shadow">
+          <img src="./logos/img2.png" class="card-img-top img-fluid" alt="imatge" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

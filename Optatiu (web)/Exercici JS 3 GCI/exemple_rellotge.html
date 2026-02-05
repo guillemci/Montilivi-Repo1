@@ -11,80 +11,128 @@
     body {
       height: 100%;
       margin: 0;
-      font-size: 1vw;
+      background-color: black;
       color: white;
-      text-align: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     .container {
-      background-color: black;
-      height: 100vh;
       display: flex;
       flex-direction: column;
-    }
-
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     #zonaRellotge {
-      height: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #zonaAlarmaActiva {
-      height: 30%;
+      position: relative;
+      flex: 3;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 5vh 20px;
     }
 
+    #zonaAlarmaActiva,
     #zonaConfigAlarma {
-      height: 30%;
+      flex: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1.5vh;
+      padding: 20px;
+      gap: clamp(15px, 3vh, 40px);
     }
 
     #rellotge {
       font-family: 'Courier New', Courier, monospace;
-      font-size: 12vw;
+      font-size: clamp(50px, 18vw, 280px);
       font-weight: bold;
-      padding: 0.25em 0.5em;
+      line-height: 1;
+    }
+
+    #calendari {
+      font-size: clamp(20px, 5vw, 60px);
+      margin-top: 10px;
+      text-align: center;
+      color: #d1d1d1;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #d1d1d1;
     }
 
     #alarma {
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      background-color: rgb(65, 65, 65);
-      margin-bottom: 2vh;
-      width: 44vw;
-      height: 4vw;
-      border-radius: 20px;
+      background-color: rgb(45, 45, 45);
+      width: 90%;
+      max-width: 700px;
+      height: clamp(60px, 8vh, 100px);
+      border-radius: 50px;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      border: 1px solid #444;
     }
 
     button {
-      width: 10vw;
-      height: 3vw;
+      padding: clamp(10px, 2vh, 20px) clamp(20px, 4vw, 40px);
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
       background-color: rgb(180, 204, 218);
-      color: white;
-      border: 2px solid;
+      color: #1a1a1a;
+      border: 2px solid aliceblue;
+      border-radius: 50px;
       cursor: pointer;
-      border-color: aliceblue;
-      margin-bottom: 3vh;
-      font-size: 1vw;
-      border-radius: 20px;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+
+    label {
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+
+    input {
+      padding: 10px;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      width: clamp(60px, 8vw, 100px);
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+    }
+
+    #zonaConfigAlarma>div {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #pararAlarma {
+      width: 400px;
+      border-radius: 0;
+
+    }
+
+    .rellotge-subcontainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #imatgeRellotge {
+      position: absolute;
+      left: 100%;
+      margin-left: 20px;
+      height: clamp(40px, 10vw, 120px);
+      width: auto;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -92,40 +140,137 @@
 <body>
   <div class="container">
     <div id="zonaRellotge">
-      <span id="rellotge"></span>
-    </div>
-    <div id="zonaAlarmaActiva">
-      <h1>gestor d'alarmes</h1>
-      <span>
-        <div id="alarma">alarma hora</div>
-      </span>
-      <button>activar/desactivar</button>
+      <div class="rellotge-subcontainer">
+        <span id="rellotge">00:00:00</span>
+        <img id="imatgeRellotge" src="./rellotge.jpg" alt="Rellotge">
+      </div>
 
+      <div><span id="calendari"></span></div>
+    </div>
+
+    <div id="zonaAlarmaActiva">
+      <button style="background-color: salmon;" id="pararAlarma">STOP</button>
+      <h1>gestor d'alarmes</h1>
+      <div id="alarma">Afegir hora d'alarma</div>
+      <button id="switchAlarma">desactivar</button>
     </div>
 
     <div id="zonaConfigAlarma">
-      <div>
-        <h1>Configurar alarma</h1>
-      </div>
+      <h1>Configurar alarma</h1>
       <div>
         <label>Hora:</label>
         <input id="alarmaHora" type="number" min="0" max="23" />
         <label>Minut:</label>
         <input id="alarmaMinut" type="number" min="0" max="59" />
+        <button id="guardarAlarma">Guardar alarma</button>
       </div>
     </div>
   </div>
+
   <script>
+    //constants i variables
+    const switchAlarma = document.getElementById("switchAlarma");
+    const alarmaDisplay = document.getElementById("alarma");
+    const alarmaHoraInput = document.getElementById("alarmaHora");
+    const alarmaMinutInput = document.getElementById("alarmaMinut");
+    const guardarAlarmaButton = document.getElementById("guardarAlarma");
+    const stop = document.getElementById("pararAlarma");
+    const audio = new Audio('alarma.mp3');
+    const imatge = document.getElementById("imatgeRellotge");
+
+    let alarma = true;
+    let minutDefint;
+    let horaDefinida;
+    let alarmaAturada = false;
+    stop.style.display = "none";
+    imatge.style.display = "none";
+
+    //butons i events
+    guardarAlarmaButton.addEventListener("click", () => {
+      alarmaAturada = false;
+      horaDefinida = parseInt(alarmaHoraInput.value)
+      minutDefint = parseInt(alarmaMinutInput.value)
+      if (isNaN(horaDefinida) || isNaN(minutDefint) || horaDefinida < 0 || horaDefinida > 23 || minutDefint < 0 || minutDefint > 59) {
+        alarmaDisplay.innerHTML = "Alarma invàlida";
+        return;
+      }
+      alarmaDisplay.innerHTML = "Alarma a les " + posarZeroDavant(horaDefinida) + ":" + posarZeroDavant(minutDefint);
+    });
+
+    stop.addEventListener("click", desactivarAlarma);
+
+    switchAlarma.onclick = function () {
+      if (alarma) {
+        alarma = false;
+        switchAlarma.innerHTML = "activar";
+      }
+      else {
+        alarma = true;
+        switchAlarma.innerHTML = "desactivar";
+      }
+
+    };
+
+    //funcions
+    function activarAlarma() {
+      alarmaDisplay.textContent = "Alarma sonant!";
+      stop.style.display = "block";
+      imatge.style.display = "block";
+      audio.loop = true;
+      audio.play();
+      rellotge.style.color = "red";
+    }
+    function desactivarAlarma() {
+      alarmaAturada = true;
+      audio.pause();
+      audio.currentTime = 0;
+      stop.style.display = "none";
+      imatge.style.display = "none";
+      rellotge.style.color = "white";
+    }
+
+    function posarZeroDavant(numero) {
+      if (numero < 10) numero = "0" + numero;
+      return numero;
+    }
+
+    //funcions principals
+    function comprovarAlarma() {
+      if (!alarma) {
+        alarmaDisplay.innerHTML = "alarma desactivada";
+        setTimeout(comprovarAlarma, 1000);
+        return;
+      }
+
+      const ara = new Date();
+      let horaActual = ara.getHours();
+      let minutActual = ara.getMinutes();
+
+      if (horaActual === horaDefinida && minutActual === minutDefint && !alarmaAturada) {
+        activarAlarma();
+      }
+      else if (horaActual === horaDefinida && minutActual === minutDefint && alarmaAturada) {
+        alarmaDisplay.innerHTML = "Ja a sonat aquesta hora";
+      }
+      else if (isNaN(horaDefinida) || isNaN(minutDefint) || horaDefinida < 0 || horaDefinida > 23 || minutDefint < 0 || minutDefint > 59) {
+        alarmaDisplay.innerHTML = "Afegir hora d'alarma";
+      }
+      else {
+        alarmaDisplay.innerHTML = "Alarma a les " + posarZeroDavant(horaDefinida) + ":" + posarZeroDavant(minutDefint);
+      }
+
+      if (horaActual !== horaDefinida || minutActual !== minutDefint) {
+        alarmaAturada = false;
+      }
+
+      setTimeout(comprovarAlarma, 1000);
+    }
+
     function llegirHora() {
       const ara = new Date();
       let hora = ara.getHours();
       let minut = ara.getMinutes();
       let segon = ara.getSeconds();
-
-      function posarZeroDavant(numero) {
-        if (numero < 10) numero = "0" + numero;
-        return numero;
-      }
 
       hora = posarZeroDavant(hora);
       minut = posarZeroDavant(minut);
@@ -139,8 +284,29 @@
       caixaRellotge.innerHTML = llegirHora();
     }
 
+    function llegirCalendari() {
+      const ara = new Date();
+      let dia = ara.getDate();
+      let mes = ara.getMonth() + 1;
+      let any = ara.getFullYear();
+
+      dia = posarZeroDavant(dia);
+      mes = posarZeroDavant(mes);
+
+      return dia + "/" + mes + "/" + any;
+    }
+
+    function pintarCalendari() {
+      const caixaCalendari = document.getElementById("calendari");
+      caixaCalendari.innerHTML = llegirCalendari();
+    }
+
     setInterval(pintarHora, 1000);
+    setInterval(pintarCalendari, 1000);
+
     pintarHora();
+    pintarCalendari();
+    comprovarAlarma();
   </script>
 
 </body>
