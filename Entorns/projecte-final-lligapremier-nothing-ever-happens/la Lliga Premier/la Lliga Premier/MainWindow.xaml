@@ -1,0 +1,36 @@
+﻿<Window x:Class="la_Lliga_Premier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:la_Lliga_Premier"
+        mc:Ignorable="d"
+        Title="Premier League Manager" Height="500" Width="850">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="#F3F3F3" Padding="5">
+            <MenuItem Header="Aplicació">
+                <MenuItem Header="Sortir" Click="Sortir_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StatusBar DockPanel.Dock="Bottom" Background="LightSlateGray">
+            <StatusBarItem>
+                <TextBlock x:Name="TxtStatus" Text="Sistemes preparats" Foreground="White"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <StackPanel DockPanel.Dock="Left" Width="180" Background="#EAEAEA">
+            <TextBlock Text="MENÚ" FontWeight="Bold" Margin="0,15,0,15" HorizontalAlignment="Center"/>
+            <Button Content="Classificació" Click="BtnClassificacio_Click" Margin="10,5" Padding="10"/>
+            <Button Content="Llista Equips" Click="BtnEquips_Click" Margin="10,5" Padding="10"/>
+        </StackPanel>
+
+        <ContentControl x:Name="RegioPrincipal" Margin="10">
+            <TextBlock Text="Benvingut. Selecciona una opció del menú lateral." 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="Gray" 
+                       FontSize="14"/>
+        </ContentControl>
+    </DockPanel>
+</Window>

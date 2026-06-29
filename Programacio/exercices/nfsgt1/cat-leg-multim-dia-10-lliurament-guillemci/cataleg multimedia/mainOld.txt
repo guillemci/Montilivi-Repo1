@@ -1,0 +1,118 @@
+            List<Mitja> llistaMitja = new List<Mitja>();
+
+            //audiollibres
+            List<AudioLlibres> audioLlibresList = AudioLlibres.CarregarAmbCSV("Audiollibres.csv");
+            llistaMitja.AddRange(audioLlibresList);
+
+            //cançons
+            List<Cançons> CançonsList = Cançons.CarregarAmbCSV("Cansons.csv");
+            llistaMitja.AddRange(CançonsList);
+
+            //gravats
+            List<Gravats> GravatsList = Gravats.CarregarAmbCSV("Gravats.csv");
+            llistaMitja.AddRange(GravatsList);
+
+            //llibres
+            List<Llibres> LlibresList = Llibres.CarregarAmbCSV("Llibres.csv");
+            llistaMitja.AddRange(LlibresList);
+
+            //manuscrits
+            List<Manuscrits> manuscritsList = Manuscrits.CarregarAmbCSV("Manuscrits.csv");
+            llistaMitja.AddRange(manuscritsList);
+
+            //mapes
+            List<Mapes> mapes = Mapes.CarregarAmbCSV("Mapes.csv");
+            llistaMitja.AddRange(mapes);
+
+            //podcasts
+            List<Podcasts> podcasts = Podcasts.CarregarAmbCSV("Podcats.csv");
+            llistaMitja.AddRange(podcasts);
+
+            //revistes
+            List<Revistes> revistes = Revistes.CarregarAmbCSV("Revistes.csv");
+            llistaMitja.AddRange(revistes);
+
+            //partitures
+            List<Partitures> partitures = Partitures.CarregarAmbCSV("Partitures.csv");
+            llistaMitja.AddRange(partitures);
+
+            //efectes de so
+            List<EfecteSonor> efecteso = EfecteSonor.CarregarAmbCSV("Sons.csv");
+            llistaMitja.AddRange(efecteso);
+
+            Console.WriteLine();
+            Console.WriteLine("--==LISTA==--");
+            Mitja.ImprimeixLlistaRetallat(llistaMitja);
+
+            Dictionary<string, Mitja> diccionariMitja = new Dictionary<string, Mitja>();
+
+            //logotips
+            Dictionary<string, Logotip> LogosDictionary = Logotip.CarregarAmbCsvDictionary("Logos.csv");
+            foreach (var valor in LogosDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //diagrama
+            Dictionary<string, Diagrama> DiagramaDictionary = Diagrama.CarregarAmbCsvDictionary("Diagrames.csv");
+            foreach (var valor in DiagramaDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //fotos
+            Dictionary<string, Fotografia> fotografiaDictionary = Fotografia.CarregarAmbCsvDictionary("Fotos.csv");
+            foreach (var valor in fotografiaDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //art digital
+            Dictionary<string, ArtDigital> artDigitalDictionary = ArtDigital.CarregarAmbCsvDictionary("ArtDigital.csv");
+            foreach (var valor in artDigitalDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //pelicula
+            Dictionary<string, Pelicula> peliculaDictionary = Pelicula.CarregarAmbCsvDictionary("Pelicules.csv");
+            foreach (var valor in peliculaDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //documental
+            Dictionary<string, Documental> documentalDictionary = Documental.CarregarAmbCsvDictionary("Documentals.csv");
+            foreach (var valor in documentalDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            //serie
+            Dictionary<string, Serie> serieDictionary = Serie.CarregarAmbCsvDictionary("Series.csv");
+            foreach (var valor in serieDictionary.Values)
+                diccionariMitja[valor.Id] = valor;
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("--==DICCIONARi==--");
+            Mitja.ImprimirDiccionaryExtesRetallat(diccionariMitja);
+
+            //to list pasa el enum del take(10) a una llista, si no o fessim no podriem imprimir directament els 10 primers utilitzant el 
+            //metode Imprimeix llista es a dir en List<Mitja>, aixi no tinc que fer un bucle
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("--llista ordenats 10 primers per titol--");
+            Ordenar_Mitja.OrdenarPerTitol(llistaMitja);
+            Mitja.ImprimeixLlista(llistaMitja.Take(10).ToList());
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("--llista ordenats 10 primers per any de creacio--");
+            Ordenar_Mitja.Ordenar(llistaMitja, new ComparaMitjansPerAnyDeCreacio());
+            Mitja.ImprimeixLlista(llistaMitja.Take(10).ToList());
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("--llista ordenats 10 primers per Autor--");
+            Ordenar_Mitja.Ordenar(llistaMitja, new ComparaMitjansPerAutor());
+            Mitja.ImprimeixLlista(llistaMitja.Take(10).ToList());
+
+            Console.WriteLine();
+            Console.WriteLine("--llista ordenats 10 primers per Etiquetas--");
+            Ordenar_Mitja.Ordenar(llistaMitja, new ComparaMitjansPerQuantitatDEtiquetes());
+            Mitja.ImprimeixLlista(llistaMitja.Take(10).ToList());
+            Console.WriteLine();
+            Console.WriteLine("--analisis etiquetes--");
+            for (int i = 0; i < 10; i++)
+                Console.WriteLine(llistaMitja[i].Etiquetes.Count);
